@@ -15,34 +15,6 @@ import { NavLink, Route, Routes } from "react-router-dom";
 // http://localhost:3000/react-homework-template/
 export const App = () => {
 
-  const a = {
-    a: 5,
-    b:10
-  }
-
-  const b = {
-    d: 5,
-    b:15
-  }
-
-  const c = {
-    ...b,
-    ...a
-    
-  }
-
-  {
-   ...todo,
-     completed: true
-  }
-{
-  id: 15,
-    text: 'hgjg',
-     completed: true
-  }
-
-
-
   return (
     <>
       <nav>
