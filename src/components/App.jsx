@@ -1,13 +1,15 @@
 
 /**
- * 1 - Структура URL-рядка
- * 2 - npm install react-router-dom
- * 3 - BrowserRouter
- * 4 - Routes, Route
- * 5 - <Link> та <NavLink>
- * 6 - Хук useParams
- * 7 -  Вкладені маршрути
- * 8 - Індексні маршрути
+ * 1 - useSearchParams:
+ *      -get
+ *      -setSearchParams
+ *      -контрольований елемент input
+ *      -записуємо {} якщо параметру намає
+ *      -записуємо "" якщо інпут пустий
+ * 2 - useLocation (location.state?.from ?? ''/cats) юзаєм Елвіса
+ * 3 - useNavigate
+ * 4 - useLocation
+ * 4 - Lazy
  * 
  */
 
