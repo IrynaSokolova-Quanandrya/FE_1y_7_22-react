@@ -11,22 +11,24 @@
  * 
  */
 
+import CardPage from "pages/CardPage";
+import GalleryPage from "pages/GalleryPage";
+import HomePage from "pages/HomePage";
+import Layout from "pages/LayoutPage";
 import { NavLink, Route, Routes } from "react-router-dom";
 // http://localhost:3000/react-homework-template/
 export const App = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/gallery'>Gallery</NavLink></li>
-        </ul>
-      </nav>
-
       <Routes>
-        <Route path='/' element={<h1>Home page</h1>} />
-        <Route path='/gallery' element={<h1>Gallery page</h1>} />
-        <Route path='/gallery/:cardId' element={ <h1>Card page</h1> } />
+        <Route path="/" element={<Layout/>}>
+        <Route index element={<HomePage/>} />
+        <Route path='gallery' element={<GalleryPage/>} />
+        <Route path='gallery/:cardId' element={<CardPage />}>
+            <Route path="author" element={<h1>Інформація про автора</h1>} />
+            <Route path="more" element={<h1>Додаткова інформація</h1>} />
+          </Route>
+        </Route>
       </Routes>
       
     </>   
