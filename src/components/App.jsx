@@ -1,37 +1,14 @@
-
-/**
- * 2 - useSearchParams:
- *      -get+
- *      -setSearchParams+
- *      -контрольований елемент input+
- *      -записуємо {} якщо параметру намає+
- *      -записуємо "" якщо інпут пустий+
- * 3 - useLocation (location.state?.from ?? ''/cats) юзаєм Елвіса
- * 4 - useNavigate+
- * 5 - Lazy+
- * 
- */
-
-import CardPage from "pages/CardPage";
-import GalleryPage from "pages/GalleryPage";
 import HomePage from "pages/HomePage";
 import Layout from "pages/LayoutPage";
-import { NavLink, Route, Routes, useSearchParams } from "react-router-dom";
-// http://localhost:3000/react-homework-template/
+import { lazy } from "react";
+import { Route, Routes} from "react-router-dom";
+
+const GalleryPage = lazy(()=>import('../pages/GalleryPage'))
+const CardPage = lazy(()=>import('../pages/CardPage'))
+
 export const App = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const query = searchParams.get('query')
-
-
   return (
     <>
-      <input type="text" value={query} onChange={(e) => {
-        setSearchParams({
-          query:
-            e.currentTarget.value
-        })
-      }} />
-      {/* <button type="button" onClick={()=>{setSearchParams({q:5})}}>send</button> */}
       <Routes>
         <Route path="/" element={<Layout/>}>
         <Route index element={<HomePage/>} />
